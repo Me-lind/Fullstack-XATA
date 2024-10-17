@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "@xata.io/client": "^0.0.0-next.va121e4207b94bfe0a3c025fc00b247b923880930",
+    "node": "^22.10.0"
+  },
+  "name": "fullstack-xata",
+  "version": "1.0.0",
+  "description": "---",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Me-lind/Fullstack-XATA.git"
+  },
+  "author": "Melinda, Eammon, Favour, Clifford",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Me-lind/Fullstack-XATA/issues"
+  },
+  "homepage": "https://github.com/Me-lind/Fullstack-XATA#readme"
+}
