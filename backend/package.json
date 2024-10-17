@@ -1,6 +1,9 @@
 {
   "dependencies": {
     "@xata.io/client": "^0.0.0-next.va121e4207b94bfe0a3c025fc00b247b923880930",
+    "bcrypt": "^5.1.1",
+    "express": "^4.21.1",
+    "jsonwebtoken": "^9.0.2",
     "node": "^22.10.0"
   },
   "name": "fullstack-xata",
@@ -19,5 +22,12 @@
   "bugs": {
     "url": "https://github.com/Me-lind/Fullstack-XATA/issues"
   },
-  "homepage": "https://github.com/Me-lind/Fullstack-XATA#readme"
+  "homepage": "https://github.com/Me-lind/Fullstack-XATA#readme",
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/node": "^22.7.6",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.6.3"
+  }
 }
