@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://Melinda-s-workspace-o3ejv4.us-east-1.xata.sh/db/Task_Management_App",
+  "codegen": {
+    "output": "src/xata.ts"
+  }
+}

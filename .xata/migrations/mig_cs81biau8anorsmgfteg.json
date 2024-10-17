@@ -1,0 +1,27 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_cs81biau8anorsmgfteg",
+    "operations": [
+      {
+        "add_column": {
+          "up": "''",
+          "table": "Users",
+          "column": {
+            "pk": false,
+            "name": "email",
+            "type": "text",
+            "unique": true,
+            "comment": "",
+            "nullable": false
+          }
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_cs81biau8anorsmgfteg",
+  "parent": "mig_cs81bbiu8anorsmgftdg",
+  "schema": "public",
+  "startedAt": "2024-10-16T19:36:41.908391Z"
+}
