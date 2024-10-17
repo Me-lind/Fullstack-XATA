@@ -44,7 +44,13 @@ git commit -m "Added feature: your-feature-name"
 ```bash
 git push origin feature/your-feature-name
 ```
-6. **Submit a Pull Request (PR)** from your branch to the main branch of the original repo.
+6. **Submit a Pull Request (PR)** from your branch to the main branch of the original repo.   
+**How to Create a Pull Request:**
+- Go to the repository on GitHub.
+- Click on the Pull requests tab.
+- Click the New pull request button.
+- Select your feature branch and compare it with the main branch.
+- Fill out the PR template with details about your changes and click Create pull request.
 
 7. Always **Pull from main** before making any changes:
    ```bash
