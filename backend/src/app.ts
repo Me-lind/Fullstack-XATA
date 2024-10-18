@@ -11,6 +11,12 @@ app.use(express.json()) // handles the JSON requests
 // Routes
 
 
+// Testing if the test-environment works (Delete this when you start writing code to be tested)
+
+export function sum(a: number, b: number): number {
+    return a + b;
+}
+
 export default app;
 
 
