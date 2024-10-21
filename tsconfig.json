@@ -1,17 +1,18 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
-    "noImplicitAny": true,
-    "module": "ESNext",
-    "target": "ES6",
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "esModuleInterop": true,
-    "strict": true,
-    "baseUrl": "./", // Ensure this is set correctly
+    "outDir": "./dist/",                     // Output directory for compiled files
+    "noImplicitAny": true,                   // Disallows the use of variables with 'any' type
+    "module": "ESNext",                      // Use ESNext for module system, allowing import/export
+    "target": "ES6",                         // Target ECMAScript version (ES6)
+    "moduleResolution": "node",              // Ensures module resolution works for node.js modules
+    "sourceMap": true,                       // Generates source maps for easier debugging
+    "esModuleInterop": true,                 // Ensures compatibility with CommonJS modules
+    "strict": true,                          // Enables all strict type-checking options
+    "baseUrl": "./",                         // Ensures your base directory for module resolution
     "paths": {
-      "@scripts/*": ["scripts/*"]
+      "@scripts/*": ["scripts/*"]            // Alias for easier imports (example: '@scripts/taskService')
     }
   },
-  "include": ["src/components/**/*", "scripts/**/*"]
+  "include": ["src/components/**/*", "scripts/**/*"],  // Include all files in src/components and scripts
+  "exclude": ["node_modules"]                          // Exclude node_modules directory
 }

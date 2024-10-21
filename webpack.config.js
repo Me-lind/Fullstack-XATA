@@ -1,10 +1,10 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
-module.exports = {
+export default {
+  mode: 'development',
   entry: {
-    index: './src/components/Index.ts',
     login: './src/components/LoginForm.ts',
     signup: './src/components/SignupForm.ts',
     dashboard: './src/components/Dashboard.ts',
@@ -13,13 +13,13 @@ module.exports = {
   },
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/', // Adjust if needed
+    path: path.resolve(process.cwd(), 'dist'),
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.ts', '.js'],
     alias: {
-      '@scripts': path.resolve(__dirname, 'scripts/'),
+      '@scripts': path.resolve(process.cwd(), 'scripts/'),
     },
   },
   module: {
@@ -30,18 +30,13 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.css$/, // If you have CSS files
+        test: /\.css$/,  // If you're using CSS files
         use: ['style-loader', 'css-loader'],
       },
     ],
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      template: './src/pages/index.html',
-      chunks: ['index'],
-      filename: 'index.html',
-    }),
     new HtmlWebpackPlugin({
       template: './src/pages/login.html',
       chunks: ['login'],
@@ -70,15 +65,18 @@ module.exports = {
   ],
   devServer: {
     static: {
-      directory: path.join(__dirname, 'dist'),
+      directory: path.join(process.cwd(), 'dist'),
     },
     compress: true,
     port: 9000,
     historyApiFallback: true,
-    proxy: {
-      '/auth': 'http://localhost:3000',
-      '/projects': 'http://localhost:3000',
-      '/teams': 'http://localhost:3000',
-    },
+    proxy: [
+      {
+        context: ['/auth', '/projects', '/teams'],
+        target: 'http://localhost:3000',
+        secure: false,
+        changeOrigin: true,
+      },
+    ],
   },
 };
