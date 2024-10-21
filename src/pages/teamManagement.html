@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Team Management</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    .team-management {
+      max-width: 600px;
+      margin: 50px auto;
+    }
+    .team-form {
+      margin-bottom: 30px;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .team-list {
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    .team-item {
+      padding: 10px;
+      margin: 10px 0;
+      background-color: #eaeaea;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="team-management">
+    <h2>Manage Your Teams</h2>
+    <!-- Form to create a new team -->
+    <div class="team-form">
+      <h3>Create a New Team</h3>
+      <form id="teamForm">
+        <input type="text" id="teamName" placeholder="Team Name" required>
+        <input type="text" id="teamDescription" placeholder="Team Description" required>
+        <button type="submit">Create Team</button>
+      </form>
+    </div>
+    <!-- List of teams the user is part of -->
+    <div class="team-list">
+      <h3>Your Teams</h3>
+      <div id="teamList"></div>
+    </div>
+  </div>
+</body>
+</html>

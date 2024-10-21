@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "module": "ESNext",
+    "target": "ES6",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "baseUrl": "./", // Ensure this is set correctly
+    "paths": {
+      "@scripts/*": ["scripts/*"]
+    }
+  },
+  "include": ["src/components/**/*", "scripts/**/*"]
+}
