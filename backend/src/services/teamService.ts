@@ -39,7 +39,7 @@ export const updateTeam = async (team: UpdateTeam) => {
     try {
         const getExistingTeam = await xata.db.Teams.filter({ name }).getFirst();
 
-        if (!getExistingTeam) {
+        if (!getExistingTeam || !name || !description ) {
             return {
                 code: 409,
                 message: "The team doesn't exist"
@@ -65,13 +65,14 @@ export const updateTeam = async (team: UpdateTeam) => {
     }
 }
 
-export const deleteTeam = async (team: delTeam) => {
-    const { name } = team;
+export const deleteTeam = async (team: string) => {
+    // const { name } = team;
 
     try {
-        const getExistingTeam = await xata.db.Teams.filter({ name }).getFirst();
-
-        if (!getExistingTeam) {
+        const getExistingTeam = await xata.db.Teams.filter({ name: team  }).getFirst();
+        
+        if (!getExistingTeam)  {
+            console.log(getExistingTeam);
             return {
                 code: 409,
                 message: "The team doesn't exist"
