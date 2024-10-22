@@ -2,6 +2,7 @@ import express, {Express, Request, Response} from 'express';
 import { config } from 'dotenv';
 import { xata } from './utils/db';
 import { authenticateTokenMiddleware } from './middleware/authTokenMiddleware';
+import cors from 'cors';
 
 //import routers
 import authRouter from './routers/authRouter';
@@ -17,6 +18,7 @@ const app: Express = express();
 
 // global middleware
 app.use(express.json());
+app.use(cors())
 
 // register the routers
 app.use('/auth', authRouter);
