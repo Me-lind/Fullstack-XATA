@@ -40,6 +40,16 @@ app.get('/teams', async (req: Request, res: Response) => {
     res.status(200).json(teams);
 })
 
+app.get('/tasks', async (req: Request, res: Response) => {
+    const tasks = await xata.db.Tasks.getAll()
+    res.status(200).json(tasks);
+})
+
+app.get('/projects', async (req: Request, res: Response) => {
+    const projects = await xata.db.Projects.getAll();
+    res.status(200).json(projects);
+})
+
 
 // start the server
 app.listen(PORT, () => {
