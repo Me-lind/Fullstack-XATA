@@ -1,4 +1,4 @@
-import { NewTeam } from "../types/team";
+import { NewTeam, UpdateTeam } from "../types/team";
 import { xata } from "../utils/db";
 
 export const createTeam = async (team: NewTeam) => {
@@ -23,6 +23,38 @@ export const createTeam = async (team: NewTeam) => {
         return {
             code: 200,
             message: "The team has been created successfully"
+        }
+
+    } catch(error: any) {
+        return {
+            code: 500,
+            message: error.toString()
+        }
+    }
+}
+
+export const updateTeam = async (team: UpdateTeam) => {
+    const { name, description} = team;
+
+    try {
+        const getExistingTeam = await xata.db.Teams.filter({ name }).getFirst();
+
+        if (!getExistingTeam) {
+            return {
+                code: 409,
+                message: "The team doesn't exist"
+            }
+        }
+
+        const record  = await xata.db.Teams.update({
+            xata_id: getExistingTeam.xata_id,
+            name,
+            description,
+        });
+
+        return {
+            code: 200,
+            message: "The team has been updated successfully"
         }
 
     } catch(error: any) {
