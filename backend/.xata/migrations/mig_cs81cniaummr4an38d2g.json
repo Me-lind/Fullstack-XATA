@@ -1,0 +1,27 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_cs81cniaummr4an38d2g",
+    "operations": [
+      {
+        "add_column": {
+          "up": "''",
+          "table": "Team",
+          "column": {
+            "pk": false,
+            "name": "name",
+            "type": "text",
+            "unique": false,
+            "comment": "",
+            "nullable": false
+          }
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_cs81cniaummr4an38d2g",
+  "parent": "mig_cs81caiaummr4an38d1g",
+  "schema": "public",
+  "startedAt": "2024-10-16T19:39:11.197894Z"
+}
