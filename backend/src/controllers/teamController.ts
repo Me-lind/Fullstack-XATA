@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { createTeam, updateTeam } from "../services/teamService";
+import { UpdateWorkspaceMemberInviteRequestBody } from "@xata.io/client";
 
 export const create = async (req: Request, res: Response) => {
     try {
@@ -18,3 +19,5 @@ export const update = async (req: Request, res: Response) => {
         res.status(500).json({message: error.toString()})
     }
 }
+
+// export const delTeam = async (req: Request, res: Response)
