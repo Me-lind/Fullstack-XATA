@@ -1,6 +1,22 @@
 import { delTeam, NewTeam, UpdateTeam } from "../types/team";
 import { xata } from "../utils/db";
 
+
+export const getTeams = async () => {
+    try {
+        const teams = await xata.db.Teams.getAll();
+        return {
+            code: 200,
+            teams
+        }
+    } catch (error: any) {
+        return {
+            code: 500,
+            message: error.toString()
+        }
+    }
+}
+
 export const createTeam = async (team: NewTeam) => {
     const { name, description, adminId} = team;
 

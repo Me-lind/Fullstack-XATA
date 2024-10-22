@@ -35,11 +35,6 @@ app.get('/users', async (req: Request, res: Response) => {
     res.status(200).json(users);
 })
 
-app.get('/teams', async (req: Request, res: Response) => {
-    const teams = await xata.db.Teams.getAll();
-    res.status(200).json(teams);
-})
-
 app.get('/tasks', async (req: Request, res: Response) => {
     const tasks = await xata.db.Tasks.getAll()
     res.status(200).json(tasks);
