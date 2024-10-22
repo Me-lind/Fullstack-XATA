@@ -7,6 +7,7 @@ import cors from 'cors';
 //import routers
 import authRouter from './routers/authRouter';
 import teamRouter from './routers/teamRouter';
+import projectRouter from './routers/projectRouter';
 // import taskRouter from './routers/taskRouter';
 
 
@@ -23,6 +24,8 @@ app.use(cors())
 // register the routers
 app.use('/auth', authRouter);
 app.use('/teams', teamRouter)
+app.use('/projects', projectRouter);
+
 // app.use('/task', taskRouter);
 
 // test routes
@@ -35,20 +38,11 @@ app.get('/users', async (req: Request, res: Response) => {
     res.status(200).json(users);
 })
 
-app.get('/teams', async (req: Request, res: Response) => {
-    const teams = await xata.db.Teams.getAll();
-    res.status(200).json(teams);
-})
-
 app.get('/tasks', async (req: Request, res: Response) => {
     const tasks = await xata.db.Tasks.getAll()
     res.status(200).json(tasks);
 })
 
-app.get('/projects', async (req: Request, res: Response) => {
-    const projects = await xata.db.Projects.getAll();
-    res.status(200).json(projects);
-})
 
 
 // start the server
