@@ -1,32 +1,20 @@
-import { Request, Response } from 'express';
-import bcrypt from 'bcrypt';
-import xata from '../models/xata';
-import { generateToken } from '../utils/generateToken';
+import { Request, Response } from "express";
+import { registerUser, loginUser } from "../services/authService";
 
 export const register = async (req: Request, res: Response) => {
-  const { name, email, password, role } = req.body;
-  const hashedPassword = await bcrypt.hash(password, 10);
-
-  const newUser = await xata.db.Users.create({
-    name,
-    email,
-    password: hashedPassword,
-    role,
-  });
-
-  const token = generateToken({ id: newUser.id, role: newUser.role });
-  res.json({ token });
-};
+    try {
+        const {code, message} = await registerUser(req.body)
+        res.status(code).json({message})
+    } catch (error: any) {
+        res.status(500).json({message: error.toString()})
+    }
+}
 
 export const login = async (req: Request, res: Response) => {
-  const { email, password } = req.body;
-  const user = await xata.db.Users.filter({ email }).getFirst();
-
-  if (!user) return res.status(400).json({ message: 'Invalid credentials' });
-
-  const validPassword = await bcrypt.compare(password, user.password);
-  if (!validPassword) return res.status(400).json({ message: 'Invalid credentials' });
-
-  const token = generateToken({ id: user.id, role: user.role });
-  res.json({ token });
-};
+    try {
+        const {code, token} = await loginUser(req.body)
+        res.status(code).json({token})
+    } catch (error: any) {
+        res.status(500).json({message: error.toString});
+    }
+}
