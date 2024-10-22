@@ -1,4 +1,4 @@
-import { delTeam, NewTeam, UpdateTeam } from "../types/team";
+import { NewTeam, UpdateTeam } from "../types/team";
 import { xata } from "../utils/db";
 
 
