@@ -17,3 +17,5 @@ export type Team = {
 }
 
 export type NewTeam = Omit<Team, "xata_id">;
+export type UpdateTeam = Pick<Team, "name" | "description">
+export type delTeam = Pick<Team, "name">
