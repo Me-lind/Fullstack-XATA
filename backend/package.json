@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "@jest/types": "^29.6.3",
-    "@xata.io/client": "^0.0.0-next.va121e4207b94bfe0a3c025fc00b247b923880930",
+    "@xata.io/client": "0.0.0-next.vfbf85e03c9dbded87f0e347cc3850e811f46ef97",
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "express": "^4.21.1",
@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/Me-lind/Fullstack-XATA#readme",
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/jest": "^29.5.13",
