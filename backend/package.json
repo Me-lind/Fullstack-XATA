@@ -10,33 +10,32 @@
   },
   "name": "fullstack-xata",
   "version": "1.0.0",
-  "description": "---",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev src/server.ts",
-    "test": "jest"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/server.ts"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Me-lind/Fullstack-XATA.git"
-  },
-  "author": "Melinda, Eammon, Favour, Clifford",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Me-lind/Fullstack-XATA/issues"
+  "description": "",
+  "dependencies": {
+    "@xata.io/client": "^0.0.0-next.va121e4207b94bfe0a3c025fc00b247b923880930",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-validator": "^7.2.0",
+    "jsonwebtoken": "^9.0.2"
   },
-  "homepage": "https://github.com/Me-lind/Fullstack-XATA#readme",
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
-    "@types/jest": "^29.5.13",
     "@types/jsonwebtoken": "^9.0.7",
-    "@types/node": "^22.7.6",
-    "jest": "^29.7.0",
-    "ts-jest": "^29.2.5",
-    "ts-node": "^10.9.2",
-    "ts-node-dev": "^2.0.0",
+    "@types/node": "^22.7.7",
+    "nodemon": "^3.1.7",
     "typescript": "^5.6.3"
   }
 }
