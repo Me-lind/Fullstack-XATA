@@ -150,7 +150,7 @@ export default function Register() {
             {/* Right side - Image and overlay text */}
             <div className="w-1/2 bg-blue-600 relative overflow-hidden">
                 <Image 
-                    src="/api/placeholder/1200/1600" 
+                    src="https://github.com/Me-lind/Fullstack-XATA/blob/frontend/frontend/public/assets/desola-lanre-ologun-IgUR1iX0mqM-unsplash.jpg" 
                     alt="Register background" 
                     layout="fill"
                     objectFit="cover"

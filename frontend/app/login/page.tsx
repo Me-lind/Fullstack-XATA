@@ -38,7 +38,7 @@ export default function Login() {
                 {/* Left Background Image */}
                 <div className="relative">
                     <Image 
-                        src="/api/placeholder/1200/1600" 
+                        src="https://github.com/Me-lind/Fullstack-XATA/blob/frontend/frontend/public/assets/business-people-working-laptop.jpg" 
                         alt="Left background" 
                         fill 
                         style={{ objectFit: 'cover' }}
@@ -48,7 +48,7 @@ export default function Login() {
                 {/* Right Background Image */}
                 <div className="relative">
                     <Image 
-                        src="/api/placeholder/1200/1600" 
+                        src="https://github.com/Me-lind/Fullstack-XATA/blob/frontend/frontend/public/assets/diverse-businesspeople-having-meeting.jpg" 
                         alt="Right background" 
                         fill 
                         style={{ objectFit: 'cover' }}
