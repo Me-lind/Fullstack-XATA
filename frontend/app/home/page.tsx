@@ -34,7 +34,7 @@ export default function Home() {
             <div
                 className="absolute inset-0 z-0"
                 style={{
-                    backgroundImage: 'url("/api/placeholder/1920/1080")',
+                    backgroundImage: 'url("https://github.com/Me-lind/Fullstack-XATA/blob/frontend/frontend/public/assets/colleagues-giving-fist-bump.jpg")',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     opacity: 0.1
