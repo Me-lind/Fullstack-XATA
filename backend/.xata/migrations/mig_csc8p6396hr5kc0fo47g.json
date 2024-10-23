@@ -1,0 +1,22 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_csc8p6396hr5kc0fo47g",
+    "operations": [
+      {
+        "alter_column": {
+          "up": "(SELECT CASE WHEN \"assignedToId\" IS NULL THEN '' ELSE \"assignedToId\" END)",
+          "down": "(SELECT CASE WHEN \"assignedToId\" IS NULL THEN '' ELSE \"assignedToId\" END)",
+          "table": "Tasks",
+          "column": "assignedToId",
+          "nullable": false
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_csc8p6396hr5kc0fo47g",
+  "parent": "mig_csbkisn2qe4a1a2lcgqg",
+  "schema": "public",
+  "startedAt": "2024-10-23T05:41:44.957342Z"
+}
