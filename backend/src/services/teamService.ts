@@ -57,7 +57,7 @@ export const updateTeam = async (team: UpdateTeam) => {
 
         if (!getExistingTeam || !name || !description ) {
             return {
-                code: 409,
+                code: 400,
                 message: "The team doesn't exist"
             }
         }
