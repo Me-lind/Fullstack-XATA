@@ -13,7 +13,7 @@ export default function Register() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:5000/auth/register', {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_LINK_TO_DB}/auth/register`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -63,7 +63,7 @@ export default function Register() {
                                             id="name"
                                             value={name}
                                             onChange={(e) => setName(e.target.value)}
-                                            className="w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-50"
+                                            className="w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-50 text-black"
                                             placeholder="Enter your full name"
                                             required
                                         />
@@ -82,7 +82,7 @@ export default function Register() {
                                             id="email"
                                             value={email}
                                             onChange={(e) => setEmail(e.target.value)}
-                                            className="w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-50"
+                                            className="w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-50 text-black"
                                             placeholder="Enter your email"
                                             required
                                         />
@@ -101,7 +101,7 @@ export default function Register() {
                                             id="password"
                                             value={password}
                                             onChange={(e) => setPassword(e.target.value)}
-                                            className="w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-50"
+                                            className="w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-50 text-black"
                                             placeholder="Create a password"
                                             required
                                         />
@@ -119,7 +119,7 @@ export default function Register() {
                                             id="role"
                                             value={role}
                                             onChange={(e) => setRole(e.target.value)}
-                                            className="w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-50 appearance-none"
+                                            className="w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-50 appearance-none text-green-500"
                                             required
                                         >
                                             <option value="user">User</option>
@@ -148,17 +148,17 @@ export default function Register() {
             </div>
 
             {/* Right side - Image and overlay text */}
-            <div className="w-1/2 bg-blue-600 relative overflow-hidden">
+            <div className="w-1/2 bg-blue-350 relative overflow-hidden">
                 <Image 
-                    src="https://github.com/Me-lind/Fullstack-XATA/blob/frontend/frontend/public/assets/desola-lanre-ologun-IgUR1iX0mqM-unsplash.jpg" 
-                    alt="Register background" 
+                    src="https://github.com/Me-lind/Fullstack-XATA/blob/frontend/frontend/public/assets/desola-lanre-ologun-IgUR1iX0mqM-unsplash.jpg?raw=true" 
+                    alt="Register" 
                     layout="fill"
                     objectFit="cover"
-                    className="absolute inset-0"
+                    className="absolute inset-0 opacity-60"
                 />
                 <div className="relative z-20 h-full flex flex-col items-center justify-center p-12 text-white">
-                    <h3 className="text-4xl font-bold mb-4">Join Our Community</h3>
-                    <p className="text-xl text-center text-blue-100 max-w-md">
+                    <h3 className="text-5xl font-bold mb-4">Join Our Community</h3>
+                    <p className="text-2xl text-center text-blue-100 max-w-md">
                         Start your journey with us and discover a world of possibilities.
                     </p>
                 </div>
