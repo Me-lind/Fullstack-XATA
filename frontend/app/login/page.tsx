@@ -11,7 +11,7 @@ export default function Login() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:5000/auth/login', {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_LINK_TO_DB}/auth/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ export default function Login() {
             console.error('Login failed', error);
         }
     };
-
+    
     return (
         <div className="min-h-screen relative flex items-center justify-center">
             {/* Background Images */}
@@ -38,7 +38,7 @@ export default function Login() {
                 {/* Left Background Image */}
                 <div className="relative">
                     <Image 
-                        src="https://github.com/Me-lind/Fullstack-XATA/blob/frontend/frontend/public/assets/business-people-working-laptop.jpg" 
+                        src="https://github.com/Me-lind/Fullstack-XATA/blob/frontend/frontend/public/assets/business-people-working-laptop.jpg?raw=true" 
                         alt="Left background" 
                         fill 
                         style={{ objectFit: 'cover' }}
@@ -48,7 +48,7 @@ export default function Login() {
                 {/* Right Background Image */}
                 <div className="relative">
                     <Image 
-                        src="https://github.com/Me-lind/Fullstack-XATA/blob/frontend/frontend/public/assets/diverse-businesspeople-having-meeting.jpg" 
+                        src="https://github.com/Me-lind/Fullstack-XATA/blob/frontend/frontend/public/assets/diverse-businesspeople-having-meeting.jpg?raw=true" 
                         alt="Right background" 
                         fill 
                         style={{ objectFit: 'cover' }}
@@ -80,7 +80,7 @@ export default function Login() {
                                         id="email"
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
-                                        className="w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white/50"
+                                        className="w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white/50 text-black"
                                         placeholder="Enter your email"
                                         required
                                     />
@@ -98,7 +98,7 @@ export default function Login() {
                                         id="password"
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)}
-                                        className="w-full pl-10 pr-12 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white/50"
+                                        className="w-full pl-10 pr-12 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white/50 text-black"
                                         placeholder="Enter your password"
                                         required
                                     />

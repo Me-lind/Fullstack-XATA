@@ -32,12 +32,13 @@ export default function Home() {
         <div className="min-h-screen relative">
             {/* Background Image */}
             <div
-                className="absolute inset-0 z-0"
+                className="absolute inset-0 z-0 w-full object-cover"
                 style={{
-                    backgroundImage: 'url("https://github.com/Me-lind/Fullstack-XATA/blob/frontend/frontend/public/assets/colleagues-giving-fist-bump.jpg")',
+                    backgroundImage: 'url("https://github.com/Me-lind/Fullstack-XATA/blob/frontend/frontend/public/assets/colleagues-giving-fist-bump.jpg?raw=true")',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
-                    opacity: 0.1
+                    position: 'fixed',
+                    opacity: 0.28
                 }}
             />
 
@@ -49,7 +50,7 @@ export default function Home() {
                         <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                             Streamline Your Team&apos;s Workflow
                         </h1>
-                        <p className="text-xl text-gray-600 mb-8">
+                        <p className="text-xl text-white-600 mb-8">
                             A powerful task management platform designed to help teams collaborate,
                             track progress, and achieve goals together.
                         </p>
@@ -65,7 +66,7 @@ export default function Home() {
                 </div>
 
                 {/* Features Grid */}
-                <div className="bg-gray-50 py-16">
+                <div className="bg-transparent py-16 rounded-l">
                     <div className="container mx-auto px-4">
                         <h2 className="text-3xl font-bold text-center mb-12">
                             Everything You Need to Manage Tasks
@@ -74,12 +75,12 @@ export default function Home() {
                             {features.map((feature, index) => (
                                 <div
                                     key={index}
-                                    className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                                    className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
                                 >
                                     <div className="mb-4">
                                         {feature.icon}
                                     </div>
-                                    <h3 className="text-xl font-semibold mb-2">
+                                    <h3 className="text-xl font-semibold mb-2 text-blue-500">
                                         {feature.title}
                                     </h3>
                                     <p className="text-gray-600">
