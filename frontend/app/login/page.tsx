@@ -1,5 +1,6 @@
-"use client"
+"use client";
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { Mail, Lock, Eye, EyeOff } from 'lucide-react';
 
 export default function Login() {
@@ -23,20 +24,47 @@ export default function Login() {
             }
             
             const data = await response.json();
-            localStorage.setItem('token', data.token); // Save JWT to local storage
-            window.location.href = '/dashboard'; // Redirect to dashboard after login
+            localStorage.setItem('token', data.token);
+            window.location.href = '/dashboard';
         } catch (error) {
             console.error('Login failed', error);
         }
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
-            <div className="w-full max-w-md">
-                <div className="bg-white rounded-2xl shadow-xl p-8 space-y-6">
+        <div className="min-h-screen relative flex items-center justify-center">
+            {/* Background Images */}
+            <div className="absolute inset-0 grid grid-cols-2 overflow-hidden">
+                {/* Left Background Image */}
+                <div className="relative">
+                    <Image 
+                        src="/api/placeholder/1200/1600" 
+                        alt="Left background" 
+                        fill 
+                        style={{ objectFit: 'cover' }}
+                    />
+                </div>
+                
+                {/* Right Background Image */}
+                <div className="relative">
+                    <Image 
+                        src="/api/placeholder/1200/1600" 
+                        alt="Right background" 
+                        fill 
+                        style={{ objectFit: 'cover' }}
+                    />
+                </div>
+            </div>
+
+            {/* Additional overlay for better contrast */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 to-purple-900/30 z-20"></div>
+
+            {/* Login Container */}
+            <div className="w-full max-w-md relative z-30 px-4">
+                <div className="backdrop-blur-sm bg-white/90 rounded-2xl shadow-2xl p-8 space-y-6">
                     <div className="text-center space-y-2">
                         <h2 className="text-3xl font-bold text-gray-900">Welcome Back</h2>
-                        <p className="text-gray-500">Please enter your details</p>
+                        <p className="text-gray-600">Please enter your details</p>
                     </div>
 
                     <form onSubmit={handleSubmit} className="space-y-6">
@@ -52,7 +80,7 @@ export default function Login() {
                                         id="email"
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
-                                        className="w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-50"
+                                        className="w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white/50"
                                         placeholder="Enter your email"
                                         required
                                     />
@@ -70,7 +98,7 @@ export default function Login() {
                                         id="password"
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)}
-                                        className="w-full pl-10 pr-12 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-50"
+                                        className="w-full pl-10 pr-12 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white/50"
                                         placeholder="Enter your password"
                                         required
                                     />
