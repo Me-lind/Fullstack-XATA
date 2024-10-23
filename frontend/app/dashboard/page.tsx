@@ -1,5 +1,5 @@
+"use client"
 import { useEffect, useState } from "react";
-import '../styles/globals.css'
 import {
     LayoutGrid,
     Users,
@@ -60,7 +60,7 @@ export default function Dashboard() {
             },
         ]);
     }, []);
-
+  
     const stats = [
         { title: 'Active Teams', value: teams.length.toString(), icon: LayoutGrid },
         { title: 'Team Members', value: teams.reduce((acc, team) => acc + team.memberCount, 0).toString(), icon: Users },

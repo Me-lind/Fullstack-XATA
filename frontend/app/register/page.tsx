@@ -1,6 +1,6 @@
+"use client"
 import React, { useState } from 'react';
 import { User, Mail, Lock, UserCog } from 'lucide-react';
-import '../styles/globals.css'
 
 export default function Register() {
     const [name, setName] = useState('');

@@ -1,6 +1,6 @@
+"use client"
 import React, { useState } from 'react';
 import { Mail, Lock, Eye, EyeOff } from 'lucide-react';
-import '../styles/globals.css'
 
 export default function Login() {
     const [email, setEmail] = useState('');
@@ -10,7 +10,7 @@ export default function Login() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            const response = await fetch('/auth/login', {
+            const response = await fetch('http://localhost:5000/auth/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
