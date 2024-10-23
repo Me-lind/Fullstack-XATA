@@ -82,7 +82,6 @@ export const updateTeam = async (team: UpdateTeam) => {
 }
 
 export const deleteTeam = async (team: string) => {
-    // const { name } = team;
 
     try {
         const getExistingTeam = await xata.db.Teams.filter({ name: team  }).getFirst();

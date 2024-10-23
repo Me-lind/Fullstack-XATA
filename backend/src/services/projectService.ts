@@ -67,9 +67,36 @@ export const updateProject = async (project: UpdateProject) => {
 
         return {
             code: 200,
-            message: "The project has been updates successfully"
+            message: "The project has been updated successfully"
         }
     } catch (error: any) {
+        return {
+            code: 500,
+            message: error.toString()
+        }
+    }
+}
+
+export const deleteProject = async (project: string) => {
+
+    try {
+        const getExistingProject = await xata.db.Projects.filter({ name: project }).getFirst();
+
+        if (!getExistingProject) {
+            return {
+                code: 404,
+                message: "The project does not exist"
+            }
+        }
+
+        const record = await xata.db.Teams.delete(getExistingProject.xata_id)
+
+        return {
+            code: 200,
+            message: "The project has been deleted successfully"
+        }
+
+    } catch(error: any) {
         return {
             code: 500,
             message: error.toString()
