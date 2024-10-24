@@ -9,6 +9,7 @@ import authRouter from './routers/authRouter';
 import teamRouter from './routers/teamRouter';
 import projectRouter from './routers/projectRouter';
 import taskRouter from './routers/taskRouter';
+import commentRouter from './routers/commentRouter';
 
 
 config()
@@ -23,9 +24,10 @@ app.use(cors())
 
 // register the routers
 app.use('/auth', authRouter);
-app.use('/teams', teamRouter)
+app.use('/teams', teamRouter);
 app.use('/projects', projectRouter);
 app.use('/tasks', taskRouter);
+app.use('/comments', commentRouter);
 
 // test routes
 app.get('/',  (req: Request, res: Response) => {

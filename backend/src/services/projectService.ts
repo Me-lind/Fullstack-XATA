@@ -89,7 +89,7 @@ export const deleteProject = async (project: string) => {
             }
         }
 
-        const record = await xata.db.Teams.delete(getExistingProject.xata_id)
+        const record = await xata.db.Projects.delete(getExistingProject.xata_id)
 
         return {
             code: 200,
