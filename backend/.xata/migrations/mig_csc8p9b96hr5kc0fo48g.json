@@ -1,0 +1,22 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_csc8p9b96hr5kc0fo48g",
+    "operations": [
+      {
+        "alter_column": {
+          "up": "(SELECT CASE WHEN \"projectId\" IS NULL THEN '' ELSE \"projectId\" END)",
+          "down": "(SELECT CASE WHEN \"projectId\" IS NULL THEN '' ELSE \"projectId\" END)",
+          "table": "Tasks",
+          "column": "projectId",
+          "nullable": false
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_csc8p9b96hr5kc0fo48g",
+  "parent": "mig_csc8p6396hr5kc0fo47g",
+  "schema": "public",
+  "startedAt": "2024-10-23T05:41:58.094933Z"
+}

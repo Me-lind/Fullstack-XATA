@@ -1,7 +1,7 @@
 import { NewTeam, UpdateTeam } from "../types/team";
 import { xata } from "../utils/db";
 
-
+// get teams
 export const getTeams = async () => {
     try {
         const teams = await xata.db.Teams.getAll();
@@ -17,6 +17,7 @@ export const getTeams = async () => {
     }
 }
 
+// create a team
 export const createTeam = async (team: NewTeam) => {
     const { name, description, adminId} = team;
 
@@ -49,6 +50,7 @@ export const createTeam = async (team: NewTeam) => {
     }
 }
 
+// update team
 export const updateTeam = async (team: UpdateTeam) => {
     const { name, description} = team;
 
@@ -57,7 +59,7 @@ export const updateTeam = async (team: UpdateTeam) => {
 
         if (!getExistingTeam || !name || !description ) {
             return {
-                code: 409,
+                code: 400,
                 message: "The team doesn't exist"
             }
         }
@@ -82,7 +84,6 @@ export const updateTeam = async (team: UpdateTeam) => {
 }
 
 export const deleteTeam = async (team: string) => {
-    // const { name } = team;
 
     try {
         const getExistingTeam = await xata.db.Teams.filter({ name: team  }).getFirst();

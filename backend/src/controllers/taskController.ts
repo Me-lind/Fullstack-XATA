@@ -1,42 +1,38 @@
 import { Request, Response } from "express";
-import { createProject, getProjects, updateProject , deleteProject} from "../services/projectService";
+import { createTask, deleteTask, getTasks, updateTask } from "../services/taskService";
 
-// get the projects
-export const projects = async (req: Request, res: Response) => {
-    try{
-        const { projects } = await getProjects();
-        res.status(200).json(projects);
+export const tasks = async (req: Request, res: Response) => {
+    try {
+        const { tasks } = await getTasks();
+        res.status(200).json(tasks)
     } catch (error: any) {
         res.status(500).json({message: error.toString()})
     }
 }
 
-// create the project
 export const create = async (req: Request, res: Response) => {
     try {
-        const {code, message} = await createProject(req.body)
+        const {code, message} = await createTask(req.body);
         res.status(code).json({message})
     } catch (error: any) {
         res.status(500).json({message: error.toString()})
     }
 }
 
-// update the project
 export const update = async (req: Request, res: Response) => {
     try {
-        const {code, message } = await updateProject(req.body)
+        const {code, message} = await updateTask(req.body)
         res.status(code).json({message})
     } catch (error: any) {
         res.status(500).json({message: error.toString()})
     }
 }
 
-// delete the project
-export const deleteProj = async (req: Request, res: Response) => {
+export const delTask = async (req: Request, res: Response) => {
     try {
-        const {code, message} = await deleteProject(req.params.name);
+        const {code, message} = await deleteTask(req.params.name)
         res.status(code).json({message})
-    } catch ( error: any) {
+    } catch (error: any) {
         res.status(500).json({message: error.toString()})
     }
 }
