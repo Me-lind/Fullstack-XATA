@@ -13,7 +13,7 @@ export default function Register() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_LINK_TO_DB}/auth/register`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_LINK_TO_DB}/auth/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -119,11 +119,11 @@ export default function Register() {
                                             id="role"
                                             value={role}
                                             onChange={(e) => setRole(e.target.value)}
-                                            className="w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-50 appearance-none text-green-500"
+                                            className="w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-50 appearance-none text-black"
                                             required
                                         >
-                                            <option value="user">User</option>
-                                            <option value="admin">Admin</option>
+                                            <option className="text-red-500" value="admin">Admin</option>
+                                            <option className="text-green-500" value="user">User</option>
                                         </select>
                                     </div>
                                 </div>
@@ -154,13 +154,15 @@ export default function Register() {
                     alt="Register" 
                     layout="fill"
                     objectFit="cover"
-                    className="absolute inset-0 opacity-60"
+                    className="absolute inset-0 opacity-60 blur-sm"
                 />
                 <div className="relative z-20 h-full flex flex-col items-center justify-center p-12 text-white">
-                    <h3 className="text-5xl font-bold mb-4">Join Our Community</h3>
-                    <p className="text-2xl text-center text-blue-100 max-w-md">
-                        Start your journey with us and discover a world of possibilities.
-                    </p>
+                    <div className="bg-blue-600 p-5 rounded-md">
+                        <h3 className="text-5xl font-bold mb-4">Join Our Community</h3>
+                        <p className="text-2xl text-center text-blue-100 max-w-md">
+                            Start your journey with us and discover a world of possibilities.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

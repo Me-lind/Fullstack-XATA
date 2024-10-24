@@ -29,16 +29,16 @@ export default function Home() {
     ];
 
     return (
-        <div className="min-h-screen relative">
+        <div className="min-h-screen relative bg-blue-250">
             {/* Background Image */}
             <div
-                className="absolute inset-0 z-0 w-full object-cover"
+                className="absolute inset-0 z-0 w-full object-cover blur-sm"
                 style={{
                     backgroundImage: 'url("https://github.com/Me-lind/Fullstack-XATA/blob/frontend/frontend/public/assets/colleagues-giving-fist-bump.jpg?raw=true")',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     position: 'fixed',
-                    opacity: 0.28
+                    opacity: 0.4
                 }}
             />
 

@@ -36,7 +36,7 @@ export default function Login() {
             {/* Background Images */}
             <div className="absolute inset-0 grid grid-cols-2 overflow-hidden">
                 {/* Left Background Image */}
-                <div className="relative">
+                <div className="relative blur-sm">
                     <Image 
                         src="https://github.com/Me-lind/Fullstack-XATA/blob/frontend/frontend/public/assets/business-people-working-laptop.jpg?raw=true" 
                         alt="Left background" 
@@ -46,9 +46,9 @@ export default function Login() {
                 </div>
                 
                 {/* Right Background Image */}
-                <div className="relative">
+                <div className="relative blur-sm">
                     <Image 
-                        src="https://github.com/Me-lind/Fullstack-XATA/blob/frontend/frontend/public/assets/diverse-businesspeople-having-meeting.jpg?raw=true" 
+                        src="https://github.com/Me-lind/Fullstack-XATA/blob/frontend/frontend/public/assets/group-afro-americans-working-together.jpg?raw=true" 
                         alt="Right background" 
                         fill 
                         style={{ objectFit: 'cover' }}
@@ -60,7 +60,7 @@ export default function Login() {
             <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 to-purple-900/30 z-20"></div>
 
             {/* Login Container */}
-            <div className="w-full max-w-md relative z-30 px-4">
+            <div className="w-full max-w-md relative z-20 px-4">
                 <div className="backdrop-blur-sm bg-white/90 rounded-2xl shadow-2xl p-8 space-y-6">
                     <div className="text-center space-y-2">
                         <h2 className="text-3xl font-bold text-gray-900">Welcome Back</h2>

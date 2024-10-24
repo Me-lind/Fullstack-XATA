@@ -50,7 +50,6 @@ export default function Dashboard() {
     const [selectedTeam, setSelectedTeam] = useState<Team | null>(null);
 
     useEffect(() => {
-        // Simulate API fetch
         setTeams([
             { id: "team-1", name: "Development Team", memberCount: 8 },
             { id: "team-2", name: "Marketing Team", memberCount: 6 },
@@ -143,8 +142,11 @@ export default function Dashboard() {
                 ))}
             </div>
 
+            {/* Notifications Panel  */}
+            <NotificationsPanel notifications={notifications} onDismiss={(id) => setNotifications(notifications.filter(notif => notif.id !== id))} />
+
             {/* Teams Section */}
-            <Card>
+            <Card className="rounded-xl">
                 <CardHeader className="border-b border-gray-200">
                     <CardTitle>Your Teams</CardTitle>
                 </CardHeader>
@@ -170,7 +172,7 @@ export default function Dashboard() {
                 </CardContent>
             </Card>
 
-            {/* Task Board */}
+            {/* Task Board
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {filteredTasks.map(task => (
                     <div key={task.id} className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer" onClick={() => handleTaskClick(task.id)}>
@@ -178,23 +180,20 @@ export default function Dashboard() {
                         <p className="text-sm text-gray-500">Assigned to {task.assignee}</p>
                     </div>
                 ))}
-            </div>
+            </div> */}
 
-            {/* Notifications Panel */}
-            <NotificationsPanel notifications={notifications} onDismiss={(id) => setNotifications(notifications.filter(notif => notif.id !== id))} />
-
-            {/* Task Details Modal */}
+            {/* Task Details Modal
             {selectedTask && (
                 <TaskDetailsModal task={selectedTask} onClose={() => setSelectedTask(null)} onUpdateStatus={function (taskId: string, status: Task["status"]): void {
                     throw new Error("Function not implemented.");
                 } } onAddComment={function (taskId: string, content: string): void {
                     throw new Error("Function not implemented.");
                 } } />
-            )}
+            )} */}
 
             {/* Create Task and Team Forms */}
-            <CreateTaskForm projects={projects} members={users} onSubmit={() => {}} onCancel={() => {}} />
-            <CreateTeamForm onSubmit={() => {}} onCancel={() => {}} />
+            {/* <CreateTaskForm projects={projects} members={users} onSubmit={() => { }} onCancel={() => { }} />
+            <CreateTeamForm onSubmit={() => { }} onCancel={() => { }} /> */}
         </div>
     );
 }

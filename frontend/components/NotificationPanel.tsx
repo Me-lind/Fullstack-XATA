@@ -1,20 +1,21 @@
 import { Bell, Clock, MessageSquare, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Notification } from "../types/types"; 
 
 
 const NotificationsPanel = ({ 
     notifications, 
     onDismiss 
 }: { 
-    notifications: { id: string, type: 'deadline' | 'mention' | 'update', message: string, timestamp?: string }[], 
+    notifications: Notification[], 
     onDismiss: (id: string) => void 
 }) => {
     return (
-        <div className="space-y-2">
+        <div className="flex space-x-3">
             {notifications.map(notification => (
                 <div
                     key={notification.id}
-                    className="flex items-start justify-between p-3 bg-gray-50 rounded-lg"
+                    className="flex items-start justify-between p-3 bg-gray-50 rounded-lg flex-grow"
                 >
                     <div className="flex items-start gap-2">
                         {notification.type === 'deadline' && <Clock className="h-5 w-5 text-yellow-500" />}
