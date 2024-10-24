@@ -2,15 +2,40 @@
 "use client";
 import { useEffect, useState } from "react";
 import {
-    LayoutGrid, Users, Calendar, Bell, X, CheckCircle2, Clock, AlertCircle, ArrowRight
+    LayoutGrid, Users, Calendar, Bell, X, CheckCircle2, Clock, AlertCircle, ArrowRight,
+    PlusCircle
 } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { Button } from "@/components/ui/button";
 import CreateTaskForm from "../../components/CreateTasks";
 import TaskFilters from "../../components/TaskFilter";
 import CreateTeamForm from "../../components/CreateTeams";
 import TaskDetailsModal from "../../components/TaskDetails";
 import NotificationsPanel from "../../components/NotificationPanel";
 import { Team, Task, Project, User, Notification, Comment } from '../../types/types';
+
+
+const ActionButtons = ({ onCreateTask, onCreateTeam }: { 
+    onCreateTask: () => void;
+    onCreateTeam: () => void;
+}) => (
+    <div className="flex gap-4 mb-6">
+        <Button 
+            onClick={onCreateTask}
+            className="flex items-center gap-2"
+        >
+            <PlusCircle className="h-4 w-4" />
+            Create Task
+        </Button>
+        <Button 
+            onClick={onCreateTeam}
+            className="flex items-center gap-2"
+        >
+            <PlusCircle className="h-4 w-4" />
+            Create Team
+        </Button>
+    </div>
+);
 
 // Define ModalProps type
 type ModalProps = {
@@ -37,6 +62,8 @@ const Modal = ({ show, onClose, title, children }: ModalProps) => {
         </div>
     );
 };
+
+
 
 export default function Dashboard() {
     const [teams, setTeams] = useState<Team[]>([]);
@@ -74,7 +101,8 @@ export default function Dashboard() {
 
         setNotifications([
             { id: "notif-1", type: "deadline", message: "Task 'Set up database' is due soon!", timestamp: "2024-10-24T08:30:00Z" },
-            { id: "notif-2", type: "mention", message: "John Doe mentioned you in a comment", timestamp: "2024-10-23T12:45:00Z" }
+            { id: "notif-2", type: "mention", message: "John Doe mentioned you in a comment", timestamp: "2024-10-23T12:45:00Z" },
+            { id: "notif-3", type: "update", message: "You have been assigned a new task", timestamp: "2024-10-23T12:45:00Z" },
         ]);
 
         setFilteredTasks([
@@ -83,6 +111,9 @@ export default function Dashboard() {
             { id: "task-3", description: "User authentication", status: "overdue", dueDate: "2024-10-21", assignee: "Mike Johnson", projectId: "project-2", priority: "low", comments: [] },
         ]);
     }, []);
+
+    const [showCreateTaskModal, setShowCreateTaskModal] = useState(false);
+    const [showCreateTeamModal, setShowCreateTeamModal] = useState(false);
 
     const handleTaskClick = (taskId: string) => {
         const task = tasks.find((t) => t.id === taskId);
@@ -116,6 +147,12 @@ export default function Dashboard() {
                     )}
                 </button>
             </div>
+
+            {/* Action Buttons */}
+            <ActionButtons 
+                onCreateTask={() => setShowCreateTaskModal(true)}
+                onCreateTeam={() => setShowCreateTeamModal(true)}
+            />
 
             {/* Task Filters */}
             <TaskFilters projects={projects} members={users} onFilterChange={handleFilterChange} />
@@ -172,7 +209,7 @@ export default function Dashboard() {
                 </CardContent>
             </Card>
 
-            {/* Task Board
+            {/* Task Board */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {filteredTasks.map(task => (
                     <div key={task.id} className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer" onClick={() => handleTaskClick(task.id)}>
@@ -180,16 +217,33 @@ export default function Dashboard() {
                         <p className="text-sm text-gray-500">Assigned to {task.assignee}</p>
                     </div>
                 ))}
-            </div> */}
+            </div>
 
-            {/* Task Details Modal
+            {/* Modals */}
+            <Modal show={showCreateTaskModal} onClose={() => setShowCreateTaskModal(false)} title="Create New Task">
+                <CreateTaskForm 
+                    projects={projects} 
+                    members={users} 
+                    onSubmit={() => setShowCreateTaskModal(false)} 
+                    onCancel={() => setShowCreateTaskModal(false)} 
+                />
+            </Modal>
+
+            <Modal show={showCreateTeamModal} onClose={() => setShowCreateTeamModal(false)} title="Create New Team">
+                <CreateTeamForm 
+                    onSubmit={() => setShowCreateTeamModal(false)} 
+                    onCancel={() => setShowCreateTeamModal(false)} 
+                />
+            </Modal>
+
+            {/* Task Details Modal */}
             {selectedTask && (
                 <TaskDetailsModal task={selectedTask} onClose={() => setSelectedTask(null)} onUpdateStatus={function (taskId: string, status: Task["status"]): void {
                     throw new Error("Function not implemented.");
                 } } onAddComment={function (taskId: string, content: string): void {
                     throw new Error("Function not implemented.");
                 } } />
-            )} */}
+            )}
 
             {/* Create Task and Team Forms */}
             {/* <CreateTaskForm projects={projects} members={users} onSubmit={() => { }} onCancel={() => { }} />
