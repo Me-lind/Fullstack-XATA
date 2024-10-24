@@ -1,5 +1,5 @@
 {
-  "name": "test_app",
+  "name": "fullstack-xata",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -11,6 +11,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@jest/types": "^29.6.3",
     "@xata.io/client": "^0.0.0-next.va121e4207b94bfe0a3c025fc00b247b923880930",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.7",
@@ -20,6 +21,7 @@
     "express-validator": "^7.2.0",
     "jsonwebtoken": "^9.0.2",
     "ts-node": "^10.9.2"
+    "node": "^22.10.0"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
