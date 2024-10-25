@@ -80,7 +80,7 @@ const CreateTaskForm = ({
             </div>
             <div>
                 <label className="block text-sm font-medium mb-1">Priority</label>
-                <Select onValueChange={(value: Task['priority']) => setFormData({ ...formData, priority: value })}>
+                <Select onValueChange={(value) => setFormData({ ...formData, priority: value as Task['priority'] })}>
                     <SelectTrigger>
                         <SelectValue placeholder="Select Priority" />
                     </SelectTrigger>
