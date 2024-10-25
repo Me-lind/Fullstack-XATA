@@ -31,7 +31,7 @@ const TaskDetailsModal = ({
             <div className="flex justify-between items-start">
                 <div>
                     <h3 className="text-lg font-semibold">{task.description}</h3>
-                    <p className="text-sm text-gray-500">Assigned to {task.assignee}</p>
+                    <p className="text-sm text-gray-500">Assigned to {task.assignedToId}</p>
                 </div>
                 <Badge className={task.priority === 'high' ? 'badge-destructive' : 'badge-default'}>
                     {task.priority} priority
@@ -58,12 +58,12 @@ const TaskDetailsModal = ({
             <div>
                 <h4 className="font-medium mb-2">Comments</h4>
                 <div className="space-y-4 max-h-60 overflow-y-auto">
-                    {task.comments.map(comment => (
+                    {task.comments?.map(comment => (
                         <div key={comment.id} className="bg-gray-50 p-3 rounded-lg">
                             <div className="flex justify-between items-start mb-1">
-                                <span className="font-medium">{comment.userName}</span>
+                                <span className="font-medium">{comment.content}</span>
                                 <span className="text-sm text-gray-500">
-                                    {new Date(comment.timestamp).toLocaleString()}
+                                    {new Date(comment.createdAt).toLocaleString()}
                                 </span>
                             </div>
                             <p className="text-sm">{comment.content}</p>

@@ -16,12 +16,17 @@ interface Project {
 interface Task {
     id: string;
     description: string;
-    status: 'completed' | 'in-progress' | 'overdue';
-    dueDate: string;
-    assignee: string;
+    status: 'pending' | 'in-progress' | 'completed';
+    name: string;
+    duedate: string;
+    assignedToId: string;
     projectId: string;
-    priority: 'low' | 'medium' | 'high';
-    comments: Comment[];
+    priority?: 'low' | 'medium' | 'high';
+    comments?: {
+        content: string;
+        id?: string;
+        createdAt: string;
+    }[];
 }
 
 interface Comment {
