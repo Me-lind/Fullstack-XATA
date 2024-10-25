@@ -16,8 +16,8 @@ The key features of the application include:
 
 ## 🛠️ Tech Stack
 - ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-- Frontend: ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white), ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB), ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
-- Backend: ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB), ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+- Frontend: ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+- Backend: ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 - Testing: ![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
 - Database: Xata (Serverless DB)
 - Authentication: JWT
@@ -105,15 +105,15 @@ npm run dev
 ### Tasks
 - GET /tasks: Fetch all tasks for the user.
 - POST /tasks: Admins can create new tasks.
-- PATCH /tasks/:id: Update task status (Admins only).
+- PATCH /tasks/:id: Update task status.
 
 ---
 ## 👨‍💻 Contributors
 
 1. [Eammon Kiprotich](https://github.com/craizytech) - Backend  
-2. [Favour Wanjui](https://github.com/wanjuifavour) - Testing & Frontend  
-3. [Melinda Chebet](https://github.com/Me-lind) - Database intergration & Frontend   
-4. [Clifford Kovulo](https://github.com/CliffordKovulo) - Frontend
+2. [Favour Wanjui](https://github.com/wanjuifavour) - Frontend  
+3. [Melinda Chebet](https://github.com/Me-lind) - Database intergration    
+4. [Clifford Kovulo](https://github.com/CliffordKovulo) - Testing 
 
 ---
 ## 🏗️ Future Improvements
